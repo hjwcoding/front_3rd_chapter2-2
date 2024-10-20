@@ -1,4 +1,4 @@
-import { CartItem, Coupon } from "../../../types";
+import { CartItem, Coupon, Product } from "../../../types";
 
 export const calculateItemTotal = (item: CartItem) => {
   return 0;
@@ -18,4 +18,9 @@ export const calculateCartTotal = (cart: CartItem[], selectedCoupon: Coupon | nu
 
 export const updateCartItemQuantity = (cart: CartItem[], productId: string, newQuantity: number): CartItem[] => {
   return []
+};
+
+export const getRemainingStock = (product: Product, cart: CartItem[]) => {
+  const cartItem = cart.find((item) => item.product.id === product.id);
+  return product.stock - (cartItem?.quantity || 0);
 };
