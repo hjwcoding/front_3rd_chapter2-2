@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CartPage } from './components/CartPage.tsx';
 import { AdminPage } from './components/AdminPage.tsx';
 import { Coupon, Product } from '../types.ts';
-import { useCoupons, useProducts } from "./hooks";
+import { useCart, useCoupons, useProducts } from "./hooks";
 
 const initialProducts: Product[] = [
   {
@@ -42,6 +42,8 @@ const initialCoupons: Coupon[] = [
     discountValue: 10
   }
 ];
+
+
 
 const App = () => {
   const { products, updateProduct, addProduct } = useProducts(initialProducts);
