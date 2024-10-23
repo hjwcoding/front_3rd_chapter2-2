@@ -104,10 +104,6 @@ export const CartPage = ({ products, coupons }: Props) => {
     return appliedDiscount;
   };
 
-  const applyCoupon = (coupon: Coupon) => {
-    setSelectedCoupon(coupon);
-  };
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">장바구니</h1>
